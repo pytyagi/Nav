@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Lexend+Deca|Livvic:400,600&display=swap");
+
+:root {
+  /* theme colors */
+  --text-gray: #3f4954;
+  --bg-color: #0f0f0f;
+
+  /*  theme font-family */
+  --lexend: "Lexend Deca", sans-serif;
+  --livvic: "Livvic", sans-serif;
+
+  /* gradient colors */
+  /* 010 Winter Neva */
+  --navcol: linear-gradient(120deg, #ea4c89 20%, #c2e9fb 100%);
+}
+
+/* ------------------ navbar ----------------- */
+body {
+  margin: 0;
+  background: url("./assets/bg-01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-black {
+  color: var(--bg-color);
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.nav {
+  background: var(--navcol);
+  padding: 0 2rem;
+  position: relative;
+  justify-content: space-between;
+  height: 0rem;
+  min-height: 11vh;
+  overflow-y: hidden;
+  transition: height 1s cubic-bezier(0.26, -0.01, 0, 1.01);
+}
+
+.collapse {
+  height: 30rem;
+}
+nav .nav-brand a {
+  display: block;
+  padding: 1rem 0;
+  font-family: var(--lexend);
+  font-size: 1.6rem;
+}
+nav .nav-items {
+  list-style-type: none;
+  margin: 0;
+}
+nav .nav-items .nav-link {
+  padding: 1.3rem 1rem;
+  font-family: var(--livvic);
+  font-size: 1.1rem;
+}
+nav .nav-items .nav-link:hover {
+  background: var(--bg-color);
+}
+
+nav .nav-items .nav-link:hover a {
+  color: white;
+}
+nav .social {
+  padding: 1rem 0;
+}
+
+nav .social i {
+  padding: 0.2rem;
+}
+nav .toggle-collapse {
+  display: none;
+  top: 0%;
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+}
+
+nav .toggle-collapse .toggle-icons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.4rem 4rem;
+}
+nav .toggle-collapse .toggle-icons {
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  nav .nav-items {
+    flex-direction: column;
+    padding: 0;
+  }
+  nav {
+    flex-direction: column !important;
+    display: block !important;
+  }
+  nav .toggle-collapse {
+    display: initial;
+  }
+}
